@@ -1,8 +1,7 @@
 import style from "styled-components";
 
 export const Container = style.div`
-background-color: rgba(21, 36, 35, 0.9);
-
+  background-color: rgba(21, 36, 35, 0.9);
   height: auto;
   border-radius: 20px;
   box-shadow: 0px 0px 8px 2px #348e91;
@@ -42,12 +41,6 @@ export const Imagem = style.img`
 `;
 
 export const ContainerImagem = style.img`
-  // padding: 10px;
-  // display: flex;
-  // justify-content: center;
-  // aligin-items: center;
-  // margin: 20px;
-
 `;
 
 export const InformacoesContainer = style.div`
