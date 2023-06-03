@@ -8,6 +8,7 @@ import {
   Opcao,
   Botao,
   ContainerBotao,
+  Conjunto,
 } from "./style";
 
 import { useState, useEffect, useRef, useContext } from "react";
@@ -28,7 +29,7 @@ export default function Formulario() {
   const valoresFiltro = useRef(null);
 
   async function ConsultGeneros() {
-    const response = await axios.get(`http://186.224.71.16:3000/api/genres`);
+    const response = await axios.get(`http://localhost:3080/api/genres`);
     setListaGeneros(response.data.ListaGeneros);
   }
   function handleClick() {
@@ -46,7 +47,7 @@ export default function Formulario() {
 
   async function consultFilme() {
     const response = await axios.get(
-      `http://186.224.71.16:3000/api/movie/${getAno}/${getGenero}`
+      `http://localhost:3080/api/movie/${getAno}/${getGenero}`
     );
     setResultadoPesquisa(response.data);
     setMostrarPesquisas(true);
@@ -54,10 +55,10 @@ export default function Formulario() {
 
   useEffect(() => {
     let listaAno = Array();
-    let index = 1950;
-    while (index <= moment().format("YYYY")) {
+    let index = moment().format("YYYY");
+    while (index >= 1950) {
       listaAno.push(index);
-      index++;
+      index--;
     }
     ConsultGeneros();
     setListaAno(listaAno);
@@ -68,22 +69,26 @@ export default function Formulario() {
     <>
       <Container>
         <ContainerFormulario ref={valoresFiltro}>
-          Ano
-          <Dropdown name="Ano">
-            {getListaAno.map((ano) => {
-              return <Opcao key={ano}>{ano}</Opcao>;
-            })}
-          </Dropdown>
-          Genero
-          <Dropdown name="Genero">
-            {getListaGeneros.map((genero) => {
-              return (
-                <Opcao value={genero.id} key={genero.id}>
-                  {genero.name}
-                </Opcao>
-              );
-            })}
-          </Dropdown>
+          <Conjunto>
+            Ano:
+            <Dropdown name="Ano">
+              {getListaAno.map((ano) => {
+                return <Opcao key={ano}>{ano}</Opcao>;
+              })}
+            </Dropdown>
+          </Conjunto>
+          <Conjunto>
+            Genero:
+            <Dropdown name="Genero">
+              {getListaGeneros.map((genero) => {
+                return (
+                  <Opcao value={genero.id} key={genero.id}>
+                    {genero.name}
+                  </Opcao>
+                );
+              })}
+            </Dropdown>
+          </Conjunto>
           <ContainerBotao>
             <Botao onClick={handleClick}>
               <p>Pesquisar!</p>
