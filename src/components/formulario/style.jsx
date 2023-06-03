@@ -7,47 +7,68 @@ export const Container = styled.div`
 `;
 
 export const ContainerFormulario = styled.form`
-  background-color: #348e91;
+  // background: #840019;
   padding: 2%;
+  width: auto;
   margin-top: 20px;
-  box-shadow: 0px 0px 8px 2px #f2f2f2;
+  // box-shadow: 0px 0px 8px 2px #fefefe;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-content: center;
+  margin-top: 120px;
+  // justify-content: botto;
+  align-items: bottom;
+  height: 5px;
+  width: 100%;
   border-radius: 10px;
+`;
+
+export const Conjunto = styled.label`
+  margin-left: 100px;
+  font-weight: bold;
+  color: #fefefe;
 `;
 
 export const Dropdown = styled.select`
   // width: 30px;
 
-  display: flex;
-  aligin-items: center;
-  flex-direction: column;
+  // display: flex;
+  // aligin-items: center;
+  // flex-direction: column;
   border-radius: 5px;
-  margin-bottom: 5%;
+  // margin-left: 5%;
 `;
 
 export const Opcao = styled.option``;
 
 export const Botao = styled.div`
-  background: #651366;
+  background: #23a900;
+  // background: #01c4e7;
+
+  padding-left: 10%;
+  padding-right: 10%;
+
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 10px;
-  height: 35px;
-  box-shadow: 0px 0px 8px 2px #f6f6f6f6;
+  height: 40px;
+  box-shadow: 0px 0px 4px 2px #f6f6f6f6;
   width: 100px;
   color: #f6f6f6f6;
   border: 0px solid #f6f6f6f;
+  font-weight: bold;
   cursor: pointer;
+  &:hover {
+    // background-color: #c501e2;
+    background-color: #01c4e7;
+
+    color: #000000;
+    // box-shadow: 0px 0px 8px 2px #f6f6f6f6;
+  }
 `;
 
 export const ContainerBotao = styled.div`
   height: 35px;
   padding: 2%;
   display: flex;
-  margin-left: 3.5%;
-  margin-top: 15%;
+  margin-left: 100px;
 `;

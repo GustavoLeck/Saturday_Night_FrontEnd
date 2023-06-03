@@ -1,33 +1,23 @@
-import Header from "./components/header";
-import Formulario from "./components/formulario";
-import React, { useContext, useEffect } from "react";
+import style from "styled-components";
+import { useContext } from "react";
+
 import { AppContext } from "./AppContext";
+
+import Header from "./components/header";
+import ResultadoPesquisa from "./components/resultadoPesquisa";
+
 function App() {
-  const {
-    getMostrarPesquisa,
-    setMostrarPesquisas,
-    getResultadoPesquisa,
-    setResultadoPesquisa,
-  } = useContext(AppContext);
+  const Container = style.div`
+  font-family: Verdana, sans-serif;
+  `;
 
-  function handleMostrar() {
-    console.log("Teste");
-  }
-
-  useEffect(() => {
-    console.log("Teste");
-  }, [getMostrarPesquisa]);
+  const { getMostrarPesquisa, getResultadoPesquisa } = useContext(AppContext);
 
   return (
-    <>
+    <Container>
       <Header></Header>
-      <Formulario>{handleMostrar}</Formulario>
-      {() => {
-        if (getMostrarPesquisa === true) {
-          return <h1></h1>;
-        }
-      }}
-    </>
+      {getMostrarPesquisa ? <ResultadoPesquisa></ResultadoPesquisa> : null}
+    </Container>
   );
 }
 
