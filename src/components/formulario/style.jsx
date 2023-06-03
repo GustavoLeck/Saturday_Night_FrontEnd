@@ -7,14 +7,11 @@ export const Container = styled.div`
 `;
 
 export const ContainerFormulario = styled.form`
-  // background: #840019;
   padding: 2%;
   width: auto;
   margin-top: 20px;
-  // box-shadow: 0px 0px 8px 2px #fefefe;
   display: flex;
   margin-top: 120px;
-  // justify-content: botto;
   align-items: bottom;
   height: 5px;
   width: 100%;
@@ -28,24 +25,17 @@ export const Conjunto = styled.label`
 `;
 
 export const Dropdown = styled.select`
-  // width: 30px;
-
-  // display: flex;
-  // aligin-items: center;
-  // flex-direction: column;
+  max-width: 100px;
+  min-width: 100px;
   border-radius: 5px;
-  // margin-left: 5%;
 `;
 
 export const Opcao = styled.option``;
 
 export const Botao = styled.div`
   background: #23a900;
-  // background: #01c4e7;
-
   padding-left: 10%;
   padding-right: 10%;
-
   display: flex;
   align-items: center;
   justify-content: center;
@@ -58,11 +48,8 @@ export const Botao = styled.div`
   font-weight: bold;
   cursor: pointer;
   &:hover {
-    // background-color: #c501e2;
     background-color: #01c4e7;
-
     color: #000000;
-    // box-shadow: 0px 0px 8px 2px #f6f6f6f6;
   }
 `;
 
