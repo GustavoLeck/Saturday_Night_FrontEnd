@@ -20,12 +20,7 @@ export default function Formulario() {
   const [getAno, setAno] = useState(1950);
   const [getGenero, setGenero] = useState(28);
 
-  const {
-    getMostrarPesquisa,
-    setMostrarPesquisas,
-    getResultadoPesquisa,
-    setResultadoPesquisa,
-  } = useContext(AppContext);
+  const { setMostrarPesquisas, setResultadoPesquisa } = useContext(AppContext);
   const valoresFiltro = useRef(null);
 
   async function ConsultGeneros() {
