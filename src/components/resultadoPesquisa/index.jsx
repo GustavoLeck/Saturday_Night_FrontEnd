@@ -9,9 +9,7 @@ import { AppContext } from "../../AppContext";
 import { useState, useEffect, useRef, useContext } from "react";
 
 export default function ResultadoPesquisa() {
-  const [getUrl, setUrl] = useState(
-    "http://image.tmdb.org/t/p/w200/mSta5O31rPUcZH98psx0cxLbPXd.jpg"
-  );
+  const [getUrl, setUrl] = useState("http://image.tmdb.org/t/p/w200");
   const { getResultadoPesquisa } = useContext(AppContext);
   useEffect(() => {
     setUrl("http://image.tmdb.org/t/p/w200" + getResultadoPesquisa.poster_path);
